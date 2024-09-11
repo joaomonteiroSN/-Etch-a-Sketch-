@@ -15,7 +15,7 @@
 }
 .box-el {
     border: 1px solid #000000;
-    flex: 1;
+    /* flex: 1; */
     aspect-ratio: 1/1;
 }
 
