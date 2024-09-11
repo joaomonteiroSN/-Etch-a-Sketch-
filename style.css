@@ -8,13 +8,15 @@
     margin: 50px auto;
     display: flex;
     gap: 0; 
-    max-width: 602px;
-    height: 602px;
+    width: 602px;
+    height: 600px;
     flex-wrap: wrap;
     border: 1px solid #000000;
 }
 .box-el {
     border: 1px solid #000000;
+    flex: 1;
+    aspect-ratio: 1/1;
 }
 
 footer {
