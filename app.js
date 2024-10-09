@@ -7,7 +7,7 @@ let counter = 0;
 let squareSize = (600/gridTemplate);
 
 function createGrid() {
-
+    counter = 0;
     while(counter < gridTemplate ** 2) {
         const square = document.createElement('div');
         square.classList.add('box-el');
@@ -32,6 +32,7 @@ button.addEventListener('click', () => {
     createGrid();
     console.log(gridTemplate);
     console.log(squareSize);
+    console.log(counter);
 });
 
 // -- Hover effect --
