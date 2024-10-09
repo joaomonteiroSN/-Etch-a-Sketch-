@@ -22,7 +22,11 @@ createGrid();
 // -- prompt button --
 
 button.addEventListener('click', () => {
-    const playerChoose = parseInt(prompt('Choose the grid template.'));
+    let playerChoose = parseInt(prompt('Choose the grid template between 1-100.'));
+
+    while(playerChoose < 1 || playerChoose > 100) {
+        playerChoose = parseInt(prompt('Please choose a valid format for the grid(1-100).'));
+    };
 
     container.innerHTML = "";
 
@@ -40,7 +44,7 @@ const hoverEffect = () => {
     let square = document.querySelectorAll('.box-el');
     
     square.forEach(div => div.addEventListener('mouseover', () => {
-        div.style.background = '#000000'
+        div.style.background = '#000000';
     }));
 }
 
