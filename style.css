@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+.main {
+    text-align: center;
+    margin-top: 5%;
+}
+
 .container {
     margin: 50px auto;
     display: flex;
@@ -12,11 +17,11 @@
     height: 600px;
     flex-wrap: wrap;
     border: 1px solid #000000;
+    aspect-ratio: 1 / 1;
 }
 .box-el {
     border: 1px solid #000000;
-    /* flex: 1; */
-    aspect-ratio: 1/1;
+    flex: 1;
 }
 
 footer {

@@ -1,24 +1,43 @@
 const container = document.querySelector('.container');
+const button = document.querySelector('.button-template');
 
-const squareSize = (600/16);
+let gridTemplate = 16;
 
 let counter = 0;
+let squareSize = (600/gridTemplate);
 
+function createGrid() {
 
-while(counter < 256) {
-    const square = document.createElement('div');
-    square.classList.add('box-el');
-    square.style.minWidth = `${squareSize}px`;
-    container.appendChild(square);
-    counter++;
+    while(counter < gridTemplate ** 2) {
+        const square = document.createElement('div');
+        square.classList.add('box-el');
+        square.style.minWidth = `${squareSize}px`;
+        container.appendChild(square);
+        counter++;
+    }
 }
+
+createGrid();
+
+// -- prompt button --
+
+button.addEventListener('click', () => {
+    const playerChoose = parseInt(prompt('Choose the grid template.'));
+    
+    container.innerHTML = "";
+    
+    gridTemplate = playerChoose;
+    squareSize = (600/gridTemplate);
+    
+    createGrid();
+    console.log(gridTemplate);
+    console.log(squareSize);
+});
 
 // -- Hover effect --
 
-const square = document.querySelectorAll('.box-el');
+let square = document.querySelectorAll('.box-el');
 
 square.forEach(div => div.addEventListener('mouseover', () => {
     div.style.background = '#000000'
 }));
-
-console.log(square);
