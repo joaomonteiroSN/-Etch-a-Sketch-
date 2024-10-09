@@ -1,5 +1,6 @@
 const container = document.querySelector('.container');
 const button = document.querySelector('.button-template');
+const buttonErase = document.querySelector('.button-erase');
 
 let gridTemplate = 16;
 
@@ -39,10 +40,9 @@ button.addEventListener('click', () => {
 
 // -- Hover effect --
 
-const hoverEffect = () => {
+let square = document.querySelectorAll('.box-el');
 
-    let square = document.querySelectorAll('.box-el');
-    
+const hoverEffect = () => {
     square.forEach(div => div.addEventListener('mouseover', () => {
         div.style.background = '#000000';
     }));
@@ -50,3 +50,6 @@ const hoverEffect = () => {
 
 hoverEffect();
 
+buttonErase.addEventListener('click', () => {
+    square.forEach((div) => div.style.background = '#ffffff');
+});
