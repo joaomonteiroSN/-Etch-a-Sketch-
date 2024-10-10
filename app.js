@@ -2,6 +2,7 @@ const container = document.querySelector('.container');
 const buttonTemplate = document.querySelector('.button-template');
 const buttonErase = document.querySelector('.button-erase');
 const buttonRandom = document.querySelector('.button-random');
+const buttonProgressiveDark = document.querySelector('.button-opacity');
 
 let square;
 
@@ -60,6 +61,16 @@ buttonRandom.addEventListener('click', () => {
     square.forEach((div) => div.style.background = '#ffffff');
     square.forEach(div => div.addEventListener('mouseover', () => {
         div.style.background = randomColor();
+    }));
+});
+
+buttonProgressiveDark.addEventListener('click', () => {
+    let counterDark = 0.1;
+    square.forEach((div) => div.style.background = '#ffffff');
+    square.forEach(div => div.addEventListener('mouseover', () => {
+        div.style.background = `rgba(0, 0, 0, ${counterDark})`;
+        // div.style.opacity = counterDark;
+        counterDark += 0.1;
     }));
 });
 
