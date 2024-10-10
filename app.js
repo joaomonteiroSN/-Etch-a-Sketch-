@@ -1,6 +1,7 @@
 const container = document.querySelector('.container');
 const button = document.querySelector('.button-template');
 const buttonErase = document.querySelector('.button-erase');
+const buttonRandom = document.querySelector('.button-random');
 
 let gridTemplate = 16;
 
@@ -53,3 +54,22 @@ hoverEffect();
 buttonErase.addEventListener('click', () => {
     square.forEach((div) => div.style.background = '#ffffff');
 });
+
+buttonRandom.addEventListener('click', () => {
+    square.forEach((div) => div.style.background = '#ffffff');
+    square.forEach(div => div.addEventListener('mouseover', () => {
+        div.style.background = randomColor();
+    }));
+});
+
+function randomColor() {
+    const hexaArray = [0,1,2,3,4,5,6,7,8,9,"A","B","C","D","E","F"];
+    let randomColor = '#';
+    
+    for (let index = 0; index < 6; index++) {
+        let randomIndex = Math.floor(Math.random() * hexaArray.length);
+        randomColor += hexaArray[randomIndex];
+    }
+
+    return randomColor;
+}
