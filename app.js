@@ -1,7 +1,9 @@
 const container = document.querySelector('.container');
-const button = document.querySelector('.button-template');
+const buttonTemplate = document.querySelector('.button-template');
 const buttonErase = document.querySelector('.button-erase');
 const buttonRandom = document.querySelector('.button-random');
+
+let square;
 
 let gridTemplate = 16;
 
@@ -21,9 +23,18 @@ function createGrid() {
 
 createGrid();
 
+const hoverEffect = () => {
+    square = document.querySelectorAll('.box-el');
+    square.forEach(div => div.addEventListener('mouseover', () => {
+        div.style.background = '#000000';
+    }));
+}
+
+hoverEffect();
+
 // -- prompt button --
 
-button.addEventListener('click', () => {
+buttonTemplate.addEventListener('click', () => {
     let playerChoose = parseInt(prompt('Choose the grid template between 1-100.'));
 
     while(playerChoose < 1 || playerChoose > 100) {
@@ -40,16 +51,6 @@ button.addEventListener('click', () => {
 });
 
 // -- Hover effect --
-
-let square = document.querySelectorAll('.box-el');
-
-const hoverEffect = () => {
-    square.forEach(div => div.addEventListener('mouseover', () => {
-        div.style.background = '#000000';
-    }));
-}
-
-hoverEffect();
 
 buttonErase.addEventListener('click', () => {
     square.forEach((div) => div.style.background = '#ffffff');
