@@ -17,6 +17,7 @@ function createGrid() {
         const square = document.createElement('div');
         square.classList.add('box-el');
         square.style.minWidth = `${squareSize}px`;
+        square.style.background = '#ffffff';
         container.appendChild(square);
         counter++;
     }
@@ -69,7 +70,6 @@ buttonProgressiveDark.addEventListener('click', () => {
     square.forEach((div) => div.style.background = '#ffffff');
     square.forEach(div => div.addEventListener('mouseover', () => {
         div.style.background = `rgba(0, 0, 0, ${counterDark})`;
-        // div.style.opacity = counterDark;
         counterDark += 0.1;
     }));
 });
