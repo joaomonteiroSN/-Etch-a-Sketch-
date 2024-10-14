@@ -15,11 +15,10 @@ body {
 
 .main {
     text-align: center;
-    margin-top: 4%;
 }
 
 h1 {
-    margin-top: 3%;
+    margin-top: 1%;
     font-size: 4rem;
 }
 
@@ -48,7 +47,7 @@ button:hover {
 }
 
 .container {
-    margin: 2% auto;
+    margin: 1% auto;
     display: flex;
     gap: 0;
     width: 602px;
@@ -75,5 +74,6 @@ footer {
 }
 
 .cat-footer-gif {
-    width: 10%;
+    padding: 0.3%;
+    width: 3%;
 }
